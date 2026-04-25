@@ -3,7 +3,8 @@
     "allow": [
       "Bash(just test:*)",
       "Bash(just build:*)",
-      "WebFetch(domain:api-compliance.eqscockpit.com)"
+      "WebFetch(domain:api-compliance.eqscockpit.com)",
+      "Bash(curl:*)"
     ]
   }
 }

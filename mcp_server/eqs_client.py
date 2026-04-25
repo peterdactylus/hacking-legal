@@ -157,16 +157,16 @@ class EQSClient:
             params["hasExternalCaseId"] = str(has_external_id).lower()
         if external_case_id:
             params["externalCaseId"] = external_case_id
-        return self._get("/api/v1/integrityline/cases", params)
+        return self._get("/v1/integrityline/cases", params)
 
     def get_case(self, case_id: int, language_iso: str = "en") -> dict:
         return self._get(
-            f"/api/v1/integrityline/cases/{case_id}",
+            f"/v1/integrityline/cases/{case_id}",
             params={"languageIso": language_iso},
         )
 
     def update_case(self, case_id: int, external_case_id: str) -> dict:
-        url = f"{self.base_url}/api/v1/integrityline/cases/{case_id}"
+        url = f"{self.base_url}/v1/integrityline/cases/{case_id}"
         resp = self._http.patch(
             url,
             headers=self._headers(),
@@ -184,7 +184,7 @@ class EQSClient:
 
     def list_languages(self, page_size: int = 100, current_page: int = 1) -> dict:
         return self._get(
-            "/api/v1/integrityline/languages",
+            "/v1/integrityline/languages",
             params={"pageSize": page_size, "currentPage": current_page},
         )
 
