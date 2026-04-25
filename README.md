@@ -28,7 +28,15 @@ Fetches the full record for a single case: country, severity, status, assigned i
 
 The country the case was filed in determines which laws apply — Germany triggers works council rules and the German Whistleblower Protection Act, France triggers Code du travail equivalents, and so on.
 
-### 3. Get Jurisdiction Rules
+### 3. Update Case
+
+Links an external reference ID to a case in EQS — useful for connecting a case to a record in another system (e.g. an HR platform or ticketing tool).
+
+### 4. List Languages
+
+Returns the languages the EQS platform supports, including which ones have machine translation available for automatic report translation.
+
+### 5. Get Jurisdiction Rules
 
 Looks up the applicable legal rules for a country and topic. EU-level rules (GDPR, EU Whistleblowing Directive) are always included regardless of country.
 
@@ -48,11 +56,11 @@ Returns the statute name, a plain-language rule summary, and practical caveats.
 
 > The quality of answers depends directly on the accuracy and completeness of what's stored in the knowledge base. Adding more countries, updating statutes, or refining the caveats immediately improves what the assistant tells investigators.
 
-### 4. Get Investigation Checklist
+### 6. Get Investigation Checklist
 
 Generates an ordered list of procedural steps for a case, tailored to the country and type of allegation. Each step references the statute that requires it. Steps adjust automatically by country and case category — for example, fraud cases include a prompt to consider regulator notification, harassment cases add a step on interviewing witnesses separately.
 
-### 5. Flag Risky Phrases
+### 7. Flag Risky Phrases
 
 Scans draft text and highlights language that could create legal risk. Three risk categories:
 

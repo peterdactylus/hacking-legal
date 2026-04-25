@@ -165,5 +165,28 @@ class EQSClient:
             params={"languageIso": language_iso},
         )
 
+    def update_case(self, case_id: int, external_case_id: str) -> dict:
+        url = f"{self.base_url}/api/v1/integrityline/cases/{case_id}"
+        resp = self._http.patch(
+            url,
+            headers=self._headers(),
+            json={"externalCaseId": external_case_id},
+        )
+        if resp.status_code == 401:
+            self._auth.invalidate()
+            resp = self._http.patch(
+                url,
+                headers=self._headers(),
+                json={"externalCaseId": external_case_id},
+            )
+        resp.raise_for_status()
+        return resp.json() if resp.content else {"status": "updated"}
+
+    def list_languages(self, page_size: int = 100, current_page: int = 1) -> dict:
+        return self._get(
+            "/api/v1/integrityline/languages",
+            params={"pageSize": page_size, "currentPage": current_page},
+        )
+
     def close(self) -> None:
         self._http.close()

@@ -15,33 +15,41 @@ Munich Hacking Legal 2026 — EQS Group. Build an AI agent embedded in EQS Integ
 
 ### Auth
 
-- **OAuth endpoint**: `https://api.integrityline.com/oauth/token`
-- **Grant type**: `client_credentials` (form-encoded POST)
-- **Credentials**: stored in `credentials.json` (client_id, client_secret)
-- **Token TTL**: access token 15 min, refresh token 45 min, session 24 hr
-- **Token refresh**: re-POST to oauth endpoint; on 401, retry once with fresh token
+- **Login endpoint**: `POST https://api-compliance.eqscockpit.com/integrations/v1/auth/login`
+- **Request body**: JSON `{ "client_id": "...", "client_secret": "..." }`
+- **Credentials**: stored in `credentials.json`
+- **Response**: `{ "token": "...", "refresh_token": "..." }`
+- **Token refresh**: `POST /v1/auth/refresh` with `{ "refresh_token": "..." }`
+- **Usage**: `Authorization: Bearer <token>` header on all protected endpoints
+- **On 401**: retry once with a fresh token
 
 ### API Base URL
 
 `https://api-compliance.eqscockpit.com/integrations` (EU environment)
 
-### Key Endpoints
+Swagger spec: `https://api-compliance.eqscockpit.com/integrations/v1/swagger.json`
+
+### Endpoints
 
 | Method | Path | Description |
 |--------|------|-------------|
-| GET | `/api/v1/integrityline/cases` | List cases (paginated, filterable) |
-| GET | `/api/v1/integrityline/cases/{id}` | Full case details |
+| POST | `/v1/auth/login` | Obtain token (JSON body: client_id, client_secret) |
+| POST | `/v1/auth/refresh` | Refresh token (JSON body: refresh_token) |
+| GET | `/v1/integrityline/cases` | List cases (paginated, filterable) |
+| GET | `/v1/integrityline/cases/{id}` | Full case details |
+| PATCH | `/v1/integrityline/cases/{id}` | Update case (sets externalCaseId) |
+| GET | `/v1/integrityline/languages` | List supported languages |
 
 ### Case List Query Params
 
-- `pageSize`, `currentPage` (0-based)
-- `fromCreatedDate`, `toCreatedDate` (ISO 8601)
-- `hasExternalCaseId` (bool), `externalCaseId` (string)
+- `pageSize` (1–100), `currentPage` (1-based)
+- `fromCreatedDate`, `toCreatedDate` (YYYY-MM-DD or ISO 8601)
+- `hasExternalCaseId` ("true"/"false"), `externalCaseId` (string, max 255)
 
 ### Case Detail Query Params
 
 - `languageIso` — translate `mainFormData` content (e.g. `"en"`, `"de"`)
-- `accept-language` header — sets response structure language
+- `accept-language` header (required) — sets response structure language
 
 ### Key Case Fields
 
@@ -54,12 +62,19 @@ Munich Hacking Legal 2026 — EQS Group. Build an AI agent embedded in EQS Integ
 | `severity` | Risk level |
 | `assignee` | Investigator assigned |
 
+### Notes
+
+- No case creation endpoint — API is read + limited write (externalCaseId update only)
+- `currentPage` is 1-based (not 0-based)
+
 ## MCP Server Tools
 
 | Tool | Purpose |
 |------|---------|
 | `list_cases` | Paginated case list from EQS |
 | `get_case` | Full case details by ID |
+| `update_case` | Set externalCaseId on a case (PATCH) |
+| `list_languages` | List languages supported by the EQS platform |
 | `get_jurisdiction_rules` | Statute lookup by country + topic |
 | `get_investigation_checklist` | Required procedural steps for country + case type |
 | `flag_risky_phrases` | Regex scan for legally dangerous phrasing in draft text |

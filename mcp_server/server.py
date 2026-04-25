@@ -1,7 +1,9 @@
 """EQS Legal Investigation MCP Server.
 
-Exposes 5 tools for an LLM to support compliance investigators:
+Exposes 7 tools for an LLM to support compliance investigators:
   - list_cases / get_case       : fetch EQS Integrity Line case data
+  - update_case                 : set externalCaseId on a case
+  - list_languages              : list languages supported by the platform
   - get_jurisdiction_rules      : applicable statutes for a country + topic
   - get_investigation_checklist : required procedural steps
   - flag_risky_phrases          : detect legally dangerous phrasing in draft text
@@ -97,7 +99,42 @@ def get_case(case_id: int, translate_to: str = "en") -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Tool 3: get_jurisdiction_rules
+# Tool 3: update_case
+# ---------------------------------------------------------------------------
+
+@mcp.tool()
+def update_case(case_id: int, external_case_id: str) -> dict:
+    """Link an external reference ID to an EQS case.
+
+    Use this to associate a case with a record in another system (e.g. an HR
+    platform, ticketing tool, or document management system).
+
+    Args:
+        case_id: Numeric EQS case ID.
+        external_case_id: The external reference ID to attach (max 255 chars).
+    """
+    return _client().update_case(case_id, external_case_id)
+
+
+# ---------------------------------------------------------------------------
+# Tool 4: list_languages
+# ---------------------------------------------------------------------------
+
+@mcp.tool()
+def list_languages(page_size: int = 100) -> dict:
+    """List languages supported by the EQS platform.
+
+    Returns each language's ISO code and whether machine translation is
+    available. Useful for deciding which languageIso to pass to get_case.
+
+    Args:
+        page_size: Number of results per page (default 100).
+    """
+    return _client().list_languages(page_size=page_size)
+
+
+# ---------------------------------------------------------------------------
+# Tool 5: get_jurisdiction_rules
 # ---------------------------------------------------------------------------
 
 @mcp.tool()
@@ -132,7 +169,7 @@ def get_jurisdiction_rules(country_iso: str, topic: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Tool 4: get_investigation_checklist
+# Tool 6: get_investigation_checklist
 # ---------------------------------------------------------------------------
 
 @mcp.tool()
@@ -154,7 +191,7 @@ def get_investigation_checklist(country_iso: str, case_classification: str = "")
 
 
 # ---------------------------------------------------------------------------
-# Tool 5: flag_risky_phrases
+# Tool 7: flag_risky_phrases
 # ---------------------------------------------------------------------------
 
 # Patterns: (regex, risk_type, suggestion_template)
