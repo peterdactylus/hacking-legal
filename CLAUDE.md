@@ -1,5 +1,9 @@
 # EQS Legal Investigation MCP Server
 
+## README
+
+`README.md` is written for non-technical collaborators (product designers, legal knowledge base editors). Keep it free of code, config, and infrastructure details — tool descriptions and knowledge base coverage only.
+
 ## Challenge
 
 Munich Hacking Legal 2026 — EQS Group. Build an AI agent embedded in EQS Integrity Line supporting compliance investigators in two modes:
