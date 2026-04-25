@@ -1,0 +1,60 @@
+{
+  "interview_recording": {
+    "statute": "Regulation of Investigatory Powers Act 2000 (RIPA) / Human Rights Act 1998 Art. 8",
+    "rule": "In the UK, covert recording of conversations by a private employer is not straightforwardly criminal but may violate the employee's right to privacy (HRA Art. 8) and render the recording inadmissible or unreliable as evidence. Best practice is to inform the employee that a meeting may be recorded and obtain consent. Covert recordings by employers are generally discouraged by employment tribunals.",
+    "caveats": [
+      "Employee-made covert recordings of workplace meetings are admissible at tribunal discretion",
+      "No all-party consent statute equivalent to German StGB §201, but privacy and data protection law apply",
+      "ICO guidance recommends transparency about recording",
+      "Recordings may be subject to subject access requests under UK GDPR"
+    ]
+  },
+  "works_council": {
+    "statute": "Employment Rights Act 1996 / TULRCA 1992 / ICE Regulations 2004",
+    "rule": "The UK has no general works council requirement. However, organisations with 50+ employees may be required to establish an Information and Consultation of Employees (ICE) framework if employees request it (ICE Regulations 2004). Trade union representatives have statutory rights to information and consultation on collective matters. Individual employees have the right to be accompanied at disciplinary hearings (ERA 1999 s.10).",
+    "caveats": [
+      "ICE Regulations only apply if triggered by 10% of employees",
+      "Trade union recognition agreements may impose additional consultation obligations",
+      "Failure to allow accompaniment at disciplinary hearing is automatically unfair"
+    ]
+  },
+  "email_review": {
+    "statute": "UK GDPR Art. 6 / DPA 2018 / ICO Employment Practices Code",
+    "rule": "Employers may monitor work email where employees have been clearly informed (transparency requirement) and there is a lawful basis, typically legitimate interests (UK GDPR Art. 6(1)(f)) with a balancing test. The ICO's Employment Practices Code requires that monitoring is necessary, proportionate, and that employees are aware of it.",
+    "caveats": [
+      "Covert monitoring is only justified in exceptional circumstances (e.g. criminal activity) and requires a high threshold",
+      "Personal emails on work systems have some privacy protection",
+      "Data Protection Impact Assessment (DPIA) recommended for systematic monitoring",
+      "Subject access requests may require disclosure of monitored content"
+    ]
+  },
+  "suspension": {
+    "statute": "Employment Rights Act 1996 / ACAS Code of Practice on Disciplinary and Grievance Procedures",
+    "rule": "Suspension pending investigation is permissible where there is reasonable justification. It should be on full pay unless the contract expressly provides otherwise. Suspension should be as brief as possible and reviewed regularly. The ACAS Code requires a fair investigation before disciplinary action.",
+    "caveats": [
+      "Suspension without pay or on reduced pay risks wrongful suspension claims",
+      "Unnecessarily long suspension may amount to a breach of the implied duty of trust and confidence",
+      "The ACAS Code is not legally binding but failure to follow it can increase tribunal awards by up to 25%",
+      "Employees should be informed of the reason for suspension and expected duration"
+    ]
+  },
+  "whistleblower_protection": {
+    "statute": "Public Interest Disclosure Act 1998 (PIDA) / Employment Rights Act 1996 s.43A–43L",
+    "rule": "Workers who make a 'qualifying disclosure' of information they reasonably believe shows wrongdoing (criminal offences, legal obligations, health & safety, environmental damage, miscarriage of justice, cover-up) are protected from detriment and dismissal. Dismissal following a protected disclosure is automatically unfair with no qualifying period.",
+    "caveats": [
+      "Protection requires a reasonable belief in the truth of the disclosure and that it is in the public interest",
+      "Malicious or personal grievance disclosures are not protected",
+      "Internal reporting is encouraged but external disclosure to regulators may also be protected",
+      "PIDA covers workers broadly, not just employees"
+    ]
+  },
+  "gdpr_data_access": {
+    "statute": "UK GDPR Art. 6, 9 / Data Protection Act 2018 Sch. 2 Para. 29",
+    "rule": "Processing employee personal data for investigations requires a lawful basis under UK GDPR Art. 6. The DPA 2018 Sch. 2 Para. 29 provides an exemption from certain data subject rights (e.g. right of access) where disclosure would prejudice crime prevention or detection. Proportionality and data minimisation apply. See also EU GDPR rules.",
+    "caveats": [
+      "The crime/prevention exemption (DPA 2018 Sch. 2 Para. 29) may allow withholding information during an active investigation",
+      "Document the basis and scope of any data access",
+      "ICO guidance on employment monitoring should be followed"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "gdpr_data_access": {
+    "statute": "GDPR Art. 6, 9, 88 / EU 2016/679",
+    "rule": "Processing employee personal data requires a lawful basis under Art. 6(1). For special-category data (health, union membership, biometrics) Art. 9 applies. Art. 88 permits Member States to adopt specific rules for employment contexts. Reviewing an employee's mailbox or device requires a documented lawful basis — typically Art. 6(1)(c) (legal obligation) or Art. 6(1)(f) (legitimate interest), with a proportionality assessment.",
+    "caveats": [
+      "Employees must generally be informed of monitoring unless notice would jeopardise the investigation (Art. 5(1)(a) transparency principle)",
+      "Data minimisation: only access data strictly necessary for the investigation (Art. 5(1)(c))",
+      "Document the lawful basis and proportionality assessment before accessing personal data",
+      "National law may impose additional restrictions — check country-specific rules"
+    ]
+  },
+  "whistleblower_protection": {
+    "statute": "EU Whistleblowing Directive 2019/1937",
+    "rule": "Organisations with 50+ employees must establish internal reporting channels and designate a competent person to handle reports. Reports must be acknowledged within 7 days and feedback provided within 3 months. Reporters must be protected from retaliation. Identity of the reporter must be kept confidential; only disclosed with explicit consent or as required by law.",
+    "caveats": [
+      "Retaliation against reporters (dismissal, demotion, harassment) is prohibited and may give rise to reversal of burden of proof in proceedings",
+      "Anonymous reports should be handled where possible under national law",
+      "Directive is implemented differently in each Member State — check national implementing act"
+    ]
+  },
+  "data_retention": {
+    "statute": "GDPR Art. 5(1)(e), Art. 17",
+    "rule": "Personal data must not be kept longer than necessary for the purpose. Case records containing personal data must have a defined retention period. Data subjects have a right to erasure once the purpose is fulfilled, subject to overriding legal obligations (e.g. limitation periods for litigation).",
+    "caveats": [
+      "Retention periods for investigation records are typically aligned with applicable limitation periods (often 3–10 years depending on jurisdiction and claim type)",
+      "Define retention policy before closing a case"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "interview_recording": {
+    "statute": "Code pénal Art. 226-1 / Art. 226-15",
+    "rule": "Recording a private conversation without the consent of all parties is a criminal offence in France (Art. 226-1 Code pénal). All-party consent is required. Covert recording of interviews is prohibited. Intercepting private correspondence (including email) without consent is separately prohibited under Art. 226-15.",
+    "caveats": [
+      "Violation carries up to 1 year imprisonment and €45,000 fine",
+      "Written notes from unrecorded interviews are lawful",
+      "Recordings obtained unlawfully are inadmissible as evidence"
+    ]
+  },
+  "works_council": {
+    "statute": "Code du travail L. 2312-8, L. 2315-3, L. 1237-19",
+    "rule": "The Comité Social et Économique (CSE) must be consulted on major changes affecting working conditions and on the implementation of monitoring tools. For organisations with 50+ employees the CSE has information and consultation rights. Prior to collective redundancy or certain disciplinary decisions, consultation is mandatory.",
+    "caveats": [
+      "CSE members are bound by confidentiality",
+      "Failure to consult can result in suspension of the measure",
+      "Individual employee representatives (délégués syndicaux) may also have rights"
+    ]
+  },
+  "email_review": {
+    "statute": "CNIL guidelines / Code du travail / Code pénal Art. 226-15",
+    "rule": "Employers may access professional email accounts where private use is prohibited by policy. Files or emails explicitly marked 'personal' or 'private' by the employee may only be opened in the presence of the employee or with their notice, unless there is an urgent and serious risk. The CNIL recommends a proportionality analysis before any email monitoring.",
+    "caveats": [
+      "Employees must be informed of monitoring (transparency requirement)",
+      "CSE must be consulted before implementing systematic email monitoring",
+      "Emails marked 'personal' have heightened protection under French case law (Cour de Cassation)"
+    ]
+  },
+  "suspension": {
+    "statute": "Code du travail L. 1232-1, L. 1234-1",
+    "rule": "Suspension is permissible as a precautionary measure pending investigation. The employee must be paid during suspension. Formal disciplinary procedures (convocation, meeting, notification) must be followed before any sanction. Internal disciplinary rules must be observed.",
+    "caveats": [
+      "Suspension without pay requires specific contractual or collective agreement basis",
+      "The disciplinary procedure timeline must be respected (convocation at least 5 working days before meeting)",
+      "The employee must be given an opportunity to be accompanied and heard"
+    ]
+  },
+  "whistleblower_protection": {
+    "statute": "Loi Sapin II (Loi 2016-1691) / Loi 2022-401 (implementing EU Directive)",
+    "rule": "France's whistleblower framework protects individuals who report, in good faith, crimes, serious violations of law, or threats to the public interest. The 2022 reform expanded scope to implement EU Directive 2019/1937. Internal reporting channels are mandatory for organisations with 50+ employees. Reporters are protected from retaliation; identity is confidential.",
+    "caveats": [
+      "Protection requires good faith; false reports made maliciously are not covered",
+      "Anonymous reports: organisations should process them where possible but are not required to",
+      "Retaliation is a criminal offence under Loi Sapin II"
+    ]
+  },
+  "gdpr_data_access": {
+    "statute": "RGPD (GDPR) Art. 6, 9, 88 / CNIL guidance",
+    "rule": "Employee personal data may be processed during investigations on the basis of legitimate interest (Art. 6(1)(f)) subject to a proportionality test, or legal obligation (Art. 6(1)(c)). The CNIL recommends documenting the necessity and proportionality of each processing activity. See also EU GDPR rules.",
+    "caveats": [
+      "Employees have a right to be informed unless notification would jeopardise the investigation",
+      "Data minimisation: limit access to data necessary for the investigation",
+      "CNIL must be notified of certain high-risk processing activities (DPIA)"
+    ]
+  }
+}

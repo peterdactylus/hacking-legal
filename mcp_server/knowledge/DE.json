@@ -1,0 +1,61 @@
+{
+  "interview_recording": {
+    "statute": "StGB §201 (Verletzung der Vertraulichkeit des Wortes)",
+    "rule": "Recording spoken words without the consent of all parties is a criminal offence in Germany (StGB §201). All-party consent is required before recording any interview or conversation. Covert recording is prohibited.",
+    "caveats": [
+      "Recording solely for personal note-taking that is never shared may fall outside §201, but this is legally contested",
+      "Playing back a recording without consent is equally prohibited",
+      "Violation carries up to 3 years' imprisonment",
+      "Written interview notes (without recording) are lawful"
+    ]
+  },
+  "works_council": {
+    "statute": "BetrVG §80, §87, §102 (Betriebsverfassungsgesetz)",
+    "rule": "The works council (Betriebsrat) has co-determination rights in matters affecting employees. Before implementing monitoring measures, accessing employee communications, or taking disciplinary action, the works council must generally be consulted. §87(1) No. 6 covers technical surveillance. §102 requires the works council to be heard before any dismissal.",
+    "caveats": [
+      "Failure to involve the works council can render disciplinary measures void",
+      "In investigations, works council involvement must be balanced against confidentiality obligations to the reporter",
+      "Works council members are subject to confidentiality themselves (BetrVG §79)",
+      "Consult your legal team on the timing of works council notification in an active investigation"
+    ]
+  },
+  "email_review": {
+    "statute": "BDSG §26 / BetrVG §87(1) No. 6 / TKG §88",
+    "rule": "Reviewing an employee's work email requires a lawful basis under BDSG §26 (data processing for employment purposes) and must be proportionate. If the employer permits private use of work email, the Telekommunikationsgesetz (TKG) may apply, requiring stricter protections. Works council must be involved (BetrVG §87(1) No. 6) if email monitoring is systematic.",
+    "caveats": [
+      "If private email use is prohibited in company policy, BDSG §26 is the primary basis",
+      "If private use is permitted, TKG §88 (telecommunications secrecy) creates additional restrictions",
+      "Document the scope limitation: only access emails relevant to the investigation",
+      "Notify the works council before implementing systematic email review"
+    ]
+  },
+  "suspension": {
+    "statute": "BGB §626 / BetrVG §102 / ArbGG",
+    "rule": "Suspension of an employee during an investigation ('Suspendierung' or 'Freistellung') is permissible where there is an important reason (BGB §626) and the employer's legitimate interest outweighs the employee's interest in continued work. The works council must be heard before any dismissal (BetrVG §102). Suspension with pay is generally safer than without pay.",
+    "caveats": [
+      "Suspension without pay requires a very strong justification and carries litigation risk",
+      "The decision to suspend should be documented with the factual basis",
+      "Works council must be notified within one week of intended dismissal",
+      "Employment contract terms and collective agreements may impose additional requirements"
+    ]
+  },
+  "whistleblower_protection": {
+    "statute": "HinSchG (Hinweisgeberschutzgesetz) 2023",
+    "rule": "Germany's Whistleblower Protection Act implements EU Directive 2019/1937. Organisations with 50+ employees must have an internal reporting channel. Reports must be acknowledged within 7 days, feedback given within 3 months. The identity of the reporter must be kept strictly confidential. Retaliation is prohibited; reporters are presumed not to be acting in bad faith.",
+    "caveats": [
+      "The responsible person handling reports is subject to strict confidentiality (HinSchG §8)",
+      "Anonymous reports may be handled but are not mandatory under HinSchG",
+      "Retaliation gives rise to damages claims by the reporter (HinSchG §37)",
+      "Intentional false reports are not protected (HinSchG §33)"
+    ]
+  },
+  "gdpr_data_access": {
+    "statute": "BDSG §26 / GDPR Art. 6(1)(c), Art. 88",
+    "rule": "Employee data processing during investigations is governed by BDSG §26, which permits processing where necessary to exercise or fulfil rights and duties arising from employment. The processing must be proportionate. See also EU GDPR rules.",
+    "caveats": [
+      "Document the specific necessity for each category of personal data accessed",
+      "Special-category data (health, union membership) requires additional justification under BDSG §26(3)",
+      "Works council co-determination rights may apply to data processing decisions"
+    ]
+  }
+}
