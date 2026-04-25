@@ -30,5 +30,9 @@ test:
         {{image}} \
         pytest tests/ -v
 
+# Expose MCP server publicly via ngrok (optional: set NGROK_DOMAIN for a fixed URL)
+tunnel:
+    ngrok http --url=${NGROK_DOMAIN:-} 8000
+
 # Rebuild and restart
 restart: stop build start

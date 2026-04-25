@@ -15,7 +15,7 @@ Munich Hacking Legal 2026 — EQS Group. Build an AI agent embedded in EQS Integ
 
 ### Auth
 
-- **Login endpoint**: `POST https://api-compliance.eqscockpit.com/integrations/v1/auth/login`
+- **Login endpoint**: `POST https://api-compliance.eqscockpit.com/integrations/v1/auth/login` (note: the `api.integrityline.com/oauth/token` endpoint returns 405 — use this one)
 - **Request body**: JSON `{ "client_id": "...", "client_secret": "..." }`
 - **Credentials**: stored in `credentials.json`
 - **Response**: `{ "token": "...", "refresh_token": "..." }`
