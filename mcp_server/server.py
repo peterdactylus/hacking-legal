@@ -1,12 +1,16 @@
 """EQS Legal Investigation MCP Server.
 
-Exposes 7 tools for an LLM to support compliance investigators:
+Exposes 11 tools for an LLM to support compliance investigators:
   - list_cases / get_case       : fetch EQS Integrity Line case data
   - update_case                 : set externalCaseId on a case
   - list_languages              : list languages supported by the platform
   - get_jurisdiction_rules      : applicable statutes for a country + topic
   - get_investigation_checklist : required procedural steps
   - flag_risky_phrases          : detect legally dangerous phrasing in draft text
+  - list_legal_data_assets      : available Otto Schmidt legal databases
+  - legal_semantic_search       : vector search across legal documents
+  - legal_qna                   : Q&A against a legal database
+  - legal_clause_check          : analyze a contract clause for legal validity
 """
 
 import os
@@ -16,7 +20,8 @@ from typing import Optional
 from dotenv import load_dotenv
 from mcp.server.fastmcp import FastMCP
 
-from eqs_client import EQSClient
+from clients.eqs_client import EQSClient
+from clients.lda_client import LDAClient
 from legal_kb import get_jurisdiction_rules as _get_rules
 from legal_kb import get_investigation_checklist as _get_checklist
 
@@ -33,6 +38,7 @@ mcp = FastMCP(
 )
 
 _eqs_client: Optional[EQSClient] = None
+_lda_client: Optional[LDAClient] = None
 
 
 def _client() -> EQSClient:
@@ -40,6 +46,13 @@ def _client() -> EQSClient:
     if _eqs_client is None:
         _eqs_client = EQSClient()
     return _eqs_client
+
+
+def _lda() -> LDAClient:
+    global _lda_client
+    if _lda_client is None:
+        _lda_client = LDAClient()
+    return _lda_client
 
 
 # ---------------------------------------------------------------------------
@@ -313,6 +326,81 @@ def flag_risky_phrases(text: str) -> list:
     # Sort by position in document
     flags.sort(key=lambda f: f["start"])
     return flags
+
+
+# ---------------------------------------------------------------------------
+# Tool 8: list_legal_data_assets
+# ---------------------------------------------------------------------------
+
+@mcp.tool()
+def list_legal_data_assets() -> dict:
+    """List available legal databases from the Otto Schmidt Legal Data Hub.
+
+    Returns all data assets (indices) the account has access to. Use the
+    returned module names as the `data_asset` parameter in other legal tools.
+    """
+    return _lda().list_data_assets()
+
+
+# ---------------------------------------------------------------------------
+# Tool 9: legal_semantic_search
+# ---------------------------------------------------------------------------
+
+@mcp.tool()
+def legal_semantic_search(
+    query: str,
+    data_asset: str,
+    candidates: int = 10,
+) -> dict:
+    """Search for semantically relevant sections across an Otto Schmidt legal database.
+
+    Returns up to 20 ranked document sections with content and source metadata.
+    Use list_legal_data_assets to find valid data_asset names.
+
+    Args:
+        query: Natural language search question.
+        data_asset: Target legal database (e.g. "Beratermodul Miet- und WEG-Recht").
+                    Use "*" to search across all available assets.
+        candidates: Number of sections to retrieve (max 20, default 10).
+    """
+    return _lda().semantic_search(query, data_asset, candidates=candidates)
+
+
+# ---------------------------------------------------------------------------
+# Tool 10: legal_qna
+# ---------------------------------------------------------------------------
+
+@mcp.tool()
+def legal_qna(question: str, data_asset: str) -> dict:
+    """Ask a natural language question against an Otto Schmidt legal database.
+
+    Returns an AI-generated answer with citations to the source documents used.
+    Use list_legal_data_assets to find valid data_asset names.
+
+    Args:
+        question: The legal question to answer (natural language, German or English).
+        data_asset: Legal database to query (e.g. "Aktionsmodul Arbeitsrecht").
+    """
+    return _lda().qna(question, data_asset)
+
+
+# ---------------------------------------------------------------------------
+# Tool 11: legal_clause_check
+# ---------------------------------------------------------------------------
+
+@mcp.tool()
+def legal_clause_check(clause: str, data_asset: str) -> dict:
+    """Analyze a contract clause for legal validity and appropriateness.
+
+    Checks the clause against applicable regulations and legal precedents in the
+    specified database. Returns an assessment with references to relevant statutes
+    and case law.
+
+    Args:
+        clause: The contract clause text to analyze.
+        data_asset: Legal database to check against (e.g. "Aktionsmodul Arbeitsrecht").
+    """
+    return _lda().clause_check(clause, data_asset)
 
 
 # ---------------------------------------------------------------------------

@@ -5,7 +5,7 @@ from unittest.mock import MagicMock, patch, call
 
 import pytest
 
-from eqs_client import EQSAuthManager, EQSClient, AuthError
+from clients.eqs_client import EQSAuthManager, EQSClient, AuthError
 
 
 FAKE_TOKEN = "fake-access-token-abc123"
@@ -147,7 +147,7 @@ class TestEQSAuthManager:
 class TestEQSClientRetryOn401:
     def test_retries_on_401_with_fresh_token(self):
         """Client should invalidate token and retry once on 401."""
-        with patch("eqs_client.get_auth_manager") as mock_get_auth:
+        with patch("clients.eqs_client.get_auth_manager") as mock_get_auth:
             mock_auth = MagicMock()
             mock_auth.get_token.return_value = FAKE_TOKEN
             mock_get_auth.return_value = mock_auth

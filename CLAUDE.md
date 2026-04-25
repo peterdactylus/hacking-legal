@@ -79,6 +79,27 @@ Swagger spec: `https://api-compliance.eqscockpit.com/integrations/v1/swagger.jso
 | `get_investigation_checklist` | Required procedural steps for country + case type |
 | `flag_risky_phrases` | Regex scan for legally dangerous phrasing in draft text |
 
+## Legal Data Analytics API (Otto Schmidt)
+
+Base URL: `https://otto-schmidt.legal-data-hub.com`
+Token endpoint: `https://online.otto-schmidt.de/token` (form-encoded POST, `grant_type=authorization_code`)
+
+### Available Data Assets (verified 2026-04-25)
+
+| Asset | Coverage |
+|-------|----------|
+| `Aktionsmodul Arbeitsrecht` | German labour law — BetrVG, HinSchG, BDSG §26, BGB §626, dismissal, suspension |
+| `Aktionsmodul Zivilrecht` | German civil law |
+| `Gesetze` | Full-text statutes (StGB, BDSG, TKG, GDPR, HinSchG, etc.) |
+| `Rechtsprechung` | Court decisions and case law |
+| `StEKs` | Tax law commentaries |
+
+All assets cover German/EU law only. No French or UK law is available via LDA — FR and GB cases rely solely on the static knowledge base.
+
+### lda_assets hints in knowledge base
+
+`DE.json` and `EU.json` topics include an `lda_assets` field listing which databases to query for deeper research on that topic. Use these when calling `legal_semantic_search` or `legal_qna` to scope the search correctly.
+
 ## Legal Knowledge Base
 
 Statutes covered per country JSON file in `mcp_server/knowledge/`:

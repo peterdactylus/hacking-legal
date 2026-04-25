@@ -27,6 +27,8 @@ test:
     docker run --rm \
         -e EQS_CLIENT_ID=test \
         -e EQS_CLIENT_SECRET=test \
+        -e LDA_CLIENT_ID=test \
+        -e LDA_CLIENT_SECRET=test \
         {{image}} \
         pytest tests/ -v
 

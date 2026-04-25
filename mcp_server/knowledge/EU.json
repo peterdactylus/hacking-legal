@@ -7,7 +7,8 @@
       "Data minimisation: only access data strictly necessary for the investigation (Art. 5(1)(c))",
       "Document the lawful basis and proportionality assessment before accessing personal data",
       "National law may impose additional restrictions — check country-specific rules"
-    ]
+    ],
+    "lda_assets": ["Gesetze"]
   },
   "whistleblower_protection": {
     "statute": "EU Whistleblowing Directive 2019/1937",
@@ -16,7 +17,8 @@
       "Retaliation against reporters (dismissal, demotion, harassment) is prohibited and may give rise to reversal of burden of proof in proceedings",
       "Anonymous reports should be handled where possible under national law",
       "Directive is implemented differently in each Member State — check national implementing act"
-    ]
+    ],
+    "lda_assets": ["Aktionsmodul Arbeitsrecht", "Gesetze"]
   },
   "data_retention": {
     "statute": "GDPR Art. 5(1)(e), Art. 17",
@@ -24,6 +26,7 @@
     "caveats": [
       "Retention periods for investigation records are typically aligned with applicable limitation periods (often 3–10 years depending on jurisdiction and claim type)",
       "Define retention policy before closing a case"
-    ]
+    ],
+    "lda_assets": ["Gesetze"]
   }
 }

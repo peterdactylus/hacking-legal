@@ -7,7 +7,8 @@
       "Playing back a recording without consent is equally prohibited",
       "Violation carries up to 3 years' imprisonment",
       "Written interview notes (without recording) are lawful"
-    ]
+    ],
+    "lda_assets": ["Aktionsmodul Arbeitsrecht", "Gesetze", "Rechtsprechung"]
   },
   "works_council": {
     "statute": "BetrVG §80, §87, §102 (Betriebsverfassungsgesetz)",
@@ -17,7 +18,8 @@
       "In investigations, works council involvement must be balanced against confidentiality obligations to the reporter",
       "Works council members are subject to confidentiality themselves (BetrVG §79)",
       "Consult your legal team on the timing of works council notification in an active investigation"
-    ]
+    ],
+    "lda_assets": ["Aktionsmodul Arbeitsrecht"]
   },
   "email_review": {
     "statute": "BDSG §26 / BetrVG §87(1) No. 6 / TKG §88",
@@ -27,7 +29,8 @@
       "If private use is permitted, TKG §88 (telecommunications secrecy) creates additional restrictions",
       "Document the scope limitation: only access emails relevant to the investigation",
       "Notify the works council before implementing systematic email review"
-    ]
+    ],
+    "lda_assets": ["Aktionsmodul Arbeitsrecht", "Gesetze"]
   },
   "suspension": {
     "statute": "BGB §626 / BetrVG §102 / ArbGG",
@@ -37,7 +40,8 @@
       "The decision to suspend should be documented with the factual basis",
       "Works council must be notified within one week of intended dismissal",
       "Employment contract terms and collective agreements may impose additional requirements"
-    ]
+    ],
+    "lda_assets": ["Aktionsmodul Arbeitsrecht", "Rechtsprechung"]
   },
   "whistleblower_protection": {
     "statute": "HinSchG (Hinweisgeberschutzgesetz) 2023",
@@ -47,7 +51,8 @@
       "Anonymous reports may be handled but are not mandatory under HinSchG",
       "Retaliation gives rise to damages claims by the reporter (HinSchG §37)",
       "Intentional false reports are not protected (HinSchG §33)"
-    ]
+    ],
+    "lda_assets": ["Aktionsmodul Arbeitsrecht", "Gesetze"]
   },
   "gdpr_data_access": {
     "statute": "BDSG §26 / GDPR Art. 6(1)(c), Art. 88",
@@ -56,6 +61,7 @@
       "Document the specific necessity for each category of personal data accessed",
       "Special-category data (health, union membership) requires additional justification under BDSG §26(3)",
       "Works council co-determination rights may apply to data processing decisions"
-    ]
+    ],
+    "lda_assets": ["Aktionsmodul Arbeitsrecht", "Gesetze"]
   }
 }

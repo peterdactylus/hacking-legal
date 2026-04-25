@@ -4,7 +4,8 @@
       "Bash(just test:*)",
       "Bash(just build:*)",
       "WebFetch(domain:api-compliance.eqscockpit.com)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "WebFetch(domain:docs.legal-data-analytics.com)"
     ]
   }
 }

@@ -71,3 +71,25 @@ Scans draft text and highlights language that could create legal risk. Three ris
 | **Premature conclusion** | Guilt or liability assigned before the investigation is complete | *"He is responsible for the data breach"* | *"He is the subject of the investigation into the data breach"* |
 
 Returns each flagged phrase with the category of risk and a concrete rewrite suggestion.
+
+---
+
+## Otto Schmidt Legal Database Tools
+
+The assistant also has access to the Otto Schmidt Legal Data Hub — a comprehensive database of German and European legal sources including commentaries, court decisions, and statutory texts across multiple practice areas.
+
+### 8. List Legal Data Assets
+
+Returns all legal databases the account has access to. Each database covers a specific practice area (e.g. labour law, tenancy law, corporate law). The name returned is what gets passed to the other Otto Schmidt tools to scope the search.
+
+### 9. Legal Semantic Search
+
+Searches for relevant sections across a legal database using natural language. Returns ranked document excerpts from commentaries, court decisions, and legal articles. Useful for finding source material on a specific legal question without needing to know the exact statute.
+
+### 10. Legal Q&A
+
+Asks a natural language question against a specific legal database and returns an AI-generated answer with citations to the source documents used. Best for getting a direct answer to a concrete legal question with references attached.
+
+### 11. Legal Clause Check
+
+Analyzes a contract clause for legal validity and appropriateness. Checks the clause against applicable regulations and case law in the selected database, and returns an assessment with references to relevant statutes and precedents.
